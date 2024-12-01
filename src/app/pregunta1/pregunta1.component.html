@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4">
+  <h2 class="mb-4">Login</h2>
+  <form (submit)="onSubmit()" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input [(ngModel)]="email" type="email" class="form-control mb-3" id="email" name="email" required email #emailField="ngModel">
+      <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
+        <div *ngIf="emailField.errors?.['required']">Ingrese su Email.</div>
+        <div *ngIf="emailField.errors?.['email']">Formato invalido.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input [(ngModel)]="password" type="password" class="form-control mb-3" id="password" name="password" required #passwordField="ngModel">
+      <div *ngIf="passwordField.invalid && passwordField.touched" class="text-danger">
+        <div *ngIf="passwordField.errors?.['required']">Password is required.</div>
+      </div>
+    </div>
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Login</button>
+  </div>
+  </form>
+  <div class="mt-1"> <button class="btn btn-link" (click)="registro()">No tienes una cuenta? Registrate</button> </div>
+  <div *ngIf="message" class="alert alert-info mt-3">{{ message }}</div>
+</div>
+</div>

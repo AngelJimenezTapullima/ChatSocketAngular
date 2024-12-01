@@ -1,0 +1,80 @@
+<div class="container pt-4">
+  <nav
+    class="navbar navbar-expand-lg bg-body-tertiary"
+    style="background-color: #ffffff"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="chat"
+        ><h3>Bienvenido al chat, {{ userName }}</h3></a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link mr-2" (click)="goToUpload()">
+              Actualizar Foto
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-2" (click)="goToMessages()">
+              Ver Historial de Mensajes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()"> Cerrar Sesión </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ul id="messages" class="list-unstyled pt-3">
+    <li *ngFor="let msg of messages" class="media mb-3 pt-2">
+      <div class="row w-100">
+        <div class="col-1 d-flex align-items-center justify-content-end pe-0">
+          <img
+            *ngIf="profileImage"
+            [src]="'data:image/png;base64,' + profileImage"
+            alt="Imagen de perfil"
+            class="rounded-circle"
+            style="width: 50px; height: 50px; object-fit: cover;"
+          />
+        </div>
+        <div class="col-11">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="mt-0 mb-1">{{ msg.user }}</h5>
+            </div>
+            <div class="col-12">
+              <p class="mb-0">{{ msg.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <form
+    (ngSubmit)="sendMessage()"
+    class="d-flex fixed-bottom p-3 bg-white border-top"
+  >
+    <input
+      [(ngModel)]="message"
+      class="form-control mr-2"
+      placeholder="Escribe tu mensaje aquí..."
+      name="message"
+    />
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>

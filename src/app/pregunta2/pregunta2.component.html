@@ -1,0 +1,57 @@
+<div class="container pt-4 d-flex justify-content-center align-items-center">
+  <div class="w-100">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3>Perfil del Usuario</h3>
+      <a class="link-offset-2 link-underline link-underline-opacity-0" (click)="goToChat()">Regresar al Chat</a>
+    </div>
+    <div class="mx-auto" style="max-width: 600px;">
+      <div *ngIf="profileImage" class="text-center mb-4">
+        <img
+          [src]="'data:image/png;base64,' + profileImage"
+          alt="Imagen de perfil"
+          class="rounded-circle profile-image mb-2"
+          style="width: 140px; height: 140px"
+        />
+      </div>
+      <form (ngSubmit)="onUpload()">
+        <div class="form-group">
+          <label for="userName">Nombre</label>
+          <input
+            type="text"
+            id="userName"
+            [(ngModel)]="userName"
+            name="userName"
+            class="form-control"
+            readonly
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="userEmail">Email</label>
+          <input
+            type="email"
+            id="userEmail"
+            [(ngModel)]="userEmail"
+            name="userEmail"
+            class="form-control"
+            readonly
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="profileImage">Seleccione Imagen de Perfil</label>
+          <input
+            type="file"
+            id="profileImage"
+            (change)="onFileSelected($event)"
+            class="form-control"
+          />
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <button type="submit" class="btn btn-primary" [disabled]="!selectedFile">
+            Actualizar
+          </button>
+        </div>
+      </form>
+      <div *ngIf="message" class="alert alert-info mt-3 text-center">{{ message }}</div>
+    </div>
+  </div>
+</div>
