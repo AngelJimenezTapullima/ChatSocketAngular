@@ -2,26 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
 
-## Development server
+## Componentes
+## Pregunta 1, Pregunta 1 registro
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Se implementó un formulario de registro y de logeo para el respectivo inicio de sesion.
 
-## Code scaffolding
+## Pregunta 2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Se muestra un formulario donde se puede subir la imagen respectiva para el usuario. 
+Los nombres y el email solo está para modo lectura.
+Si en caso el usuario tiene una imagen ya guardada se mostrará arriba de los inputs, en caso no tenga solo se muestra el formulario.
+Para acceder a esta opción, en la página de "chat" está la opción Actualizar foto.
 
-## Build
+## Pregunta 3
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para la aplicacion de chat en tiempo real se muestran los mensajes con la imagen y el nombre del usuario que envia el mensaje.
+Para simular varias personas dentro de la aplicacion basta con abrir más pestañas e iniciar sesión en cada una con diferentes usuario.
+Desde esta página se puede ir a la pregunta 2, pregunta 4 y al cierre de sesión.
 
-## Running unit tests
+## Pregunta 4
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+En esta página se muestra el historial de mensajes en una tabla indicando la fecha en la que fue realizado el mensaje, el usuario que lo redactó y el contenido del mensaje.
+Para acceder a esta opción, en la página de "chat" está la opción Ver Historial de Mensajes.
