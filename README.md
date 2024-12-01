@@ -1,6 +1,6 @@
 # EP4
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+Evaluación Permanente 4 del Curso Programación Web 2.
 
 ## Componentes
 ## Pregunta 1, Pregunta 1 registro
